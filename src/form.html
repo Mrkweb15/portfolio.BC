@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <style>
+        * {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: gray;
+        }
+        .container {
+            background-color: rgb(61, 164, 255);
+            width: 90%;
+            max-width: 500px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        form {
+            border: 2px solid black;
+            padding: 20px; 
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+        }
+        h1 {
+            display: block;
+            position: absolute;
+            margin-top: -40px;
+            background-color: rgb(61, 164, 255);
+        }
+
+        /*Name*/
+        .name {
+            display: flex;
+            flex-direction: column;
+        }
+        .name .field {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+        }
+        .name .field label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        .name .field input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        /*Info*/
+        .info {
+            display: flex;
+            flex-direction: row;
+            
+            color: #ffffff;
+            border-radius: 8px;
+            gap: 20px
+        }
+        .info .ayecolor, .info .pets {
+            margin-bottom: 20px;
+        }
+        .info h3 {
+            margin: 0 0 10px;
+        }
+        .radio-group, .check-group {
+            margin-bottom: 10px; 
+        }
+        .radio-group input, .check-group input {
+            margin-right: 10px; 
+        }
+
+        /*Languages*/
+        .language {
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 8px;
+            max-width: 100%;
+        }
+        .language h3 {
+            margin: 0 0 10px;
+        }
+        .language select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+            color: #333;
+            width: 50%;
+            font-size: 14px;
+            height: 35px;
+        }
+
+        /*Message*/
+        .mess {
+            color: #ffffff;
+            border-radius: 8px;
+            padding: 10px;
+            max-width: 100%;
+        }
+        .mess h3 {
+            margin: 0 0 10px;
+        }
+        .mess textarea {
+            padding: 10px; 
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+            color: #333;
+            width: 100%;
+            height: 150px; 
+            font-size: 14px; 
+            resize: vertical;
+        }
+
+        /*Button*/
+        .btn {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .button {
+display: inline-block;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer; 
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .btn button:hover {
+            background-color: #0056b3;
+        }
+        .btn button:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="" method="post">
+            <h1>Introduce Yourself</h1>
+            <div class="name">
+                <div class="field">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" name="first-name">
+                </div>
+                <div class="field">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" name="last-name">
+                </div>
+            </div>
+
+            <div class="info">
+                <div class="ayecolor">
+                    <h3>Eye Color:</h3>
+                    <div class="radio-group">
+                        <input type="radio" id="brown" name="eye-color" value="Brown">
+                        <label for="brown">Brown</label>
+                    </div>
+                    <div class="radio-group">
+                        <input type="radio" id="blue" name="eye-color" value="Blue">
+                        <label for="blue">Blue</label>
+                    </div>
+                    <div class="radio-group">
+                        <input type="radio" id="green" name="eye-color" value="Green">
+                        <label for="green">Green</label>
+                    </div>
+                    <div class="radio-group">
+                        <input type="radio" id="other" name="eye-color" value="Other">
+                        <label for="other">Other</label>
+                    </div>
+                </div>
+                <div class="pets">
+                    <h3>My Pets:</h3>
+                    <div class="check-group">
+                        <input type="checkbox" id="dog" name="pet" value="Dog">
+                        <label for="dog">Dog</label>
+                    </div>
+                    <div class="check-group">
+                        <input type="checkbox" id="cat" name="pet" value="Cat">
+                        <label for="cat">Cat</label>
+                    </div>
+                    <div class="check-group">
+                        <input type="checkbox" id="hamster" name="pet" value="Hamster">
+                        <label for="hamster">Hamster</label>
+                    </div>
+                    <div class="check-group">
+                        <input type="checkbox" id="fish" name="pet" value="Fish">
+                        <label for="fish">Fish</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="language">
+                <h3>Foreign language spoken:</h3>
+                <select name="language" id="language">
+                    <option value="Chinese">Chinese</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Korean">Korean</option>
+                    <option value="Mandarin">Mandarin</option>
+                </select>
+            </div>
+
+            <div class="mess">
+                <h3>Tell me more about yourself</h3>
+                <textarea name="message" id="message" placeholder="Type here"></textarea>
+            </div>
+
+            <div class="btn">
+                <a href="index.html" class="button">All Done</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
